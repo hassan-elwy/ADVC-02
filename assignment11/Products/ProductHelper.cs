@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace assignment11.Products
 {
@@ -46,6 +47,35 @@ namespace assignment11.Products
 
             Console.WriteLine();
 
+
+        }
+
+        public static string ProductTransform(List<Product> products,Func<List<Product>,string> fun)
+        {
+            return fun.Invoke(products);
+        }
+
+        public static string SummaryList(List<Product> products)
+        {
+            string s="";
+            for (int i = 0; i < products.Count; i++)
+            {
+                s+=$"{products[i].Name} ({products[i].Price})\n";
+            }
+
+            return s;
+    
+        }
+
+        public static string PriceLabels(List<Product> products)
+        {
+            string s = "";
+            for (int i = 0; i < products.Count; i++)
+            {
+                s+=products[i].PriceLabel();
+            }
+
+            return s;
 
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,12 @@ namespace assignment11.Products
             Console.WriteLine($"{Name} - {Price} ");
         }
 
-        public void ExeAction(Action action)
+        public string PriceLabel()
         {
-            action.Invoke();
+            return $"{Name} : {(Price > 100 ? "Expensive!" : "Affordable")}\n";
+         
+
+
         }
         
     }

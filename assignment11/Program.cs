@@ -35,9 +35,26 @@ namespace assignment11
             Console.WriteLine("--Detailedreport");
             ProductHelper.printReport(catalog.GetProducts(), (Product x) => { x.PrintDetailedReport(); });
         }
+       
+        public static void task3()
+        {
+            ProductCatalog catalog = new ProductCatalog();
+            List<Product> products = catalog.GetProducts();
+            String result = "";
+
+
+            Console.WriteLine("---Summary list---");
+            result = ProductHelper.ProductTransform(products, (List<Product> p) => { return ProductHelper.SummaryList(p); });
+            Console.WriteLine(result);
+
+            Console.WriteLine("----Price Label---");
+            result=ProductHelper.ProductTransform(products,(List<Product>p)=> { return ProductHelper.PriceLabels(p); });
+            Console.WriteLine(result);
+
+        }
         static void Main(string[] args)
         {
-            task2();
+            task3();
 
         }
     }
