@@ -52,9 +52,20 @@ namespace assignment11
             Console.WriteLine(result);
 
         }
+       
+        
+        public static void task4()
+        {
+            ProductCatalog catalog = new ProductCatalog();
+            List<Product> products = catalog.GetProducts();
+
+            ProductHelper.filterProduct(products, x => x.Stock < 20);
+
+        }
+        
         static void Main(string[] args)
         {
-            task3();
+            task4();
 
         }
     }

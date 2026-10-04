@@ -79,5 +79,22 @@ namespace assignment11.Products
 
         }
 
+
+        public static List<Product> filterProduct(List<Product> products,Predicate<Product> pred)
+        {
+            List<Product> filteredProducts = new List<Product>();
+            
+            
+            foreach(Product product in products)
+            {
+                if(pred.Invoke(product))
+                {
+                    filteredProducts.Add(product);
+                    Console.WriteLine($"[LOW STOCK]{product.Name}:{product.Stock} left only !"); 
+                }
+            }    
+            return filteredProducts;
+        
+        }
     }
 }
