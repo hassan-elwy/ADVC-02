@@ -29,10 +29,10 @@ namespace assignment11
             ProductCatalog catalog = new ProductCatalog();
             
 
-            Console.WriteLine("--short report");
+            Console.WriteLine("-- short report--");
             ProductHelper.printReport(catalog.GetProducts(), (Product x)=>{ x.PrintShortReport(); });
 
-            Console.WriteLine("--Detailedreport");
+            Console.WriteLine("--Detailed report--");
             ProductHelper.printReport(catalog.GetProducts(), (Product x) => { x.PrintDetailedReport(); });
         }
        
@@ -65,6 +65,13 @@ namespace assignment11
         
         static void Main(string[] args)
         {
+            Console.WriteLine("\n==============================================\n");
+            task1();
+            Console.WriteLine("\n==============================================\n");
+            task2();
+            Console.WriteLine("\n==============================================\n");
+            task3();
+            Console.WriteLine("\n==============================================\n");
             task4();
 
         }
