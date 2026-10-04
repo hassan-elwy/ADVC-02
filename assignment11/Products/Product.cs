@@ -25,5 +25,11 @@ namespace assignment11.Products
         {
             Console.WriteLine($"{Name} - {Price} ");
         }
+
+        public void ExeAction(Action action)
+        {
+            action.Invoke();
+        }
+        
     }
 }

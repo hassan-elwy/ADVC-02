@@ -24,9 +24,20 @@ namespace assignment11
 
         }
         
+        public static void task2()
+        {
+            ProductCatalog catalog = new ProductCatalog();
+            
+
+            Console.WriteLine("--short report");
+            ProductHelper.printReport(catalog.GetProducts(), (Product x)=>{ x.PrintShortReport(); });
+
+            Console.WriteLine("--Detailedreport");
+            ProductHelper.printReport(catalog.GetProducts(), (Product x) => { x.PrintDetailedReport(); });
+        }
         static void Main(string[] args)
         {
-            task1();
+            task2();
 
         }
     }

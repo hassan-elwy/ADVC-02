@@ -36,12 +36,12 @@ namespace assignment11.Products
 
 
         }
-        public static void printReport(List<Product> products, Action action)
+        public static void printReport(List<Product> products, Action<Product> action)
         {
             
             for (int i = 0; i < products.Count; i++)
             {
-                products[i].PrintDetailedReport();
+                action.Invoke(products[i]);
             }
 
             Console.WriteLine();
